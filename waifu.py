@@ -15,7 +15,7 @@ def progress(current, total):
     )
 
 
-@bot.on(admin_cmd(pattern="p"))
+@bot.on(admin_cmd(pattern="m"))
 async def _(event):
     if event.fwd_from:
         return
@@ -64,7 +64,7 @@ async def _(event):
         img_size = img_size_div.find_all("div")
         end = datetime.now()
         ms = (end - start).seconds
-        OUTPUT_STR = """/protecc {prs_text}""".format(
+        OUTPUT_STR = """/marry {prs_text}""".format(
             **locals()
         )
     await event.edit(OUTPUT_STR, parse_mode="HTML", link_preview=False)
